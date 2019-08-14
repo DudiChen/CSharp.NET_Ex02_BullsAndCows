@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "UI\UI.csproj", "{6CC1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameBoardData", "GameBoardData\GameBoardData.csproj", "{A61386AF-EC8C-4391-8E0A-19E3B6CA28B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BullsEye", "BullsEye\BullsEye.csproj", "{1EBC2ECD-9543-4A03-98F0-1F60BE17A9A1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BullsAndCows", "BullsEye\BullsAndCows.csproj", "{1EBC2ECD-9543-4A03-98F0-1F60BE17A9A1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InputHandler", "InputHandler\InputHandler.csproj", "{57A505AC-A9FC-4CEB-9A96-58FB8CC0854D}"
 EndProject
