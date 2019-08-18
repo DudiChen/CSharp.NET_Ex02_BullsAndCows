@@ -31,6 +31,21 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ex02.ConsoleUtils">
+      <HintPath>..\..\..\..\..\..\..\temp\Ex02.ConsoleUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="UIManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GameBoardData\GameBoardDataManager.csproj">
+      <Project>{a61386af-ec8c-4391-8e0a-19e3b6ca28b5}</Project>
+      <Name>GameBoardDataManager</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

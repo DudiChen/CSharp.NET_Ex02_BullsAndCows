@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{57A505AC-A9FC-4CEB-9A96-58FB8CC0854D}</ProjectGuid>
+    <ProjectGuid>{273C85B0-E268-425D-A557-E4D89E0AFC4C}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>InputHandler</RootNamespace>
-    <AssemblyName>InputHandler</AssemblyName>
+    <RootNamespace>Turn.cs</RootNamespace>
+    <AssemblyName>Turn.cs</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,18 +31,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <ItemGroup>
-    <Compile Include="InputValidationUtils.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\GameBoardData\GameBoardDataManager.csproj">
-      <Project>{a61386af-ec8c-4391-8e0a-19e3b6ca28b5}</Project>
-      <Name>GameBoardDataManager</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

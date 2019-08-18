@@ -3,7 +3,11 @@
 
 namespace C19_Ex02_1
 {
-    class Program
+    public class Program
     {
+        public static void Main()
+        {
+            
+        }
     }
 }
