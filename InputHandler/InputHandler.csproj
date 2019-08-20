@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{57A505AC-A9FC-4CEB-9A96-58FB8CC0854D}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>InputHandler</RootNamespace>
     <AssemblyName>InputHandler</AssemblyName>
@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="InputValidationUtils.cs" />
   </ItemGroup>
@@ -38,7 +41,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GameBoardData\GameBoardDataManager.csproj">
+    <ProjectReference Include="..\GameBoardDataManager\GameBoardDataManager.csproj">
       <Project>{a61386af-ec8c-4391-8e0a-19e3b6ca28b5}</Project>
       <Name>GameBoardDataManager</Name>
     </ProjectReference>

@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{6CC13E2D-0F20-4610-8EB4-9D1C61797900}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>UI</RootNamespace>
     <AssemblyName>UI</AssemblyName>
@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Ex02.ConsoleUtils">
       <HintPath>..\..\..\..\..\..\..\temp\Ex02.ConsoleUtils.dll</HintPath>
@@ -41,7 +44,7 @@
     <Compile Include="UIManager.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GameBoardData\GameBoardDataManager.csproj">
+    <ProjectReference Include="..\GameBoardDataManager\GameBoardDataManager.csproj">
       <Project>{a61386af-ec8c-4391-8e0a-19e3b6ca28b5}</Project>
       <Name>GameBoardDataManager</Name>
     </ProjectReference>

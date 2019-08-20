@@ -13,6 +13,7 @@ namespace UI
         private const string k_EmptyResult = "       ";
         private const string k_EmptyGuess  = "       ";
         private const string k_HiddenGuess = "# # # #";
+        private const int k_ResultStringLength = 8;
 
         private UIManager()
         {
@@ -69,24 +70,23 @@ Reenter a number:");
 
         private static string resultStringBuilder(Turn.Result i_GuessResultArray)
         {
-            StringBuilder resultString = new StringBuilder(8);
-            ushort numberOfPinsApended = 0;
-            for (int i = 0; i < i_GuessResultArray.m_CorrectInPlaceUshort; i++, numberOfPinsApended++)
+            StringBuilder resultString = new StringBuilder(k_ResultStringLength);
+            ushort numberOfPinsAppended = 0;
+            for (int i = 0; i < i_GuessResultArray.m_CorrectInPlaceUshort; i++, numberOfPinsAppended++)
             {
                 resultString.Append("V ");
             }
 
-            for (int i = 0; i < i_GuessResultArray.m_CorrectMisplaceUshort; i++, numberOfPinsApended++)
+            for (int i = 0; i < i_GuessResultArray.m_CorrectMisplaceUshort; i++, numberOfPinsAppended++)
             {
                 resultString.Append("X ");
             }
 
-            for (int i = numberOfPinsApended; i < GameBoardData.k_NumberOfPinsToGuess; i++)
+            for (int i = numberOfPinsAppended; i < GameBoardData.k_NumberOfPinsToGuess; i++)
             {
                 resultString.Append("  ");
             }
-
-            resultString.Remove(8, 1);
+            resultString.Remove(k_ResultStringLength-1, 1);
             return resultString.ToString();
         }
     }

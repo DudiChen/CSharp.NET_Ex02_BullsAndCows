@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.CompilerServices;
 using System.Text;
 using GameBoardDataManager;
 
@@ -8,28 +9,37 @@ namespace InputHandler
 {
     public class InputValidationUtils
     {
-        public const ushort k_NumberOfPinTypes = 8;
         public static bool ValidateUserInput(string i_UserInputString)
         {
             bool isInputCounterValid = true;
-            int[] choiceCounter = new int[k_NumberOfPinTypes];
-            foreach (char pin in i_UserInputString)
+            int[] choiceCounter = new int[GameBoardData.k_NumberOfPinTypes];
+            for (int i = 0; i < i_UserInputString.Length && isInputCounterValid; i++)
             {
-                if (pin <= 'A' && pin >= 'H')
+                char pin = i_UserInputString[i];
+
+                if (i % 2 != 0)
                 {
-                    if (choiceCounter[pin - 'A'] == 1)
+                    isInputCounterValid = (pin == ' ');
+                }
+                else
+                {
+                    if (pin <= 'A' && pin >= 'H')
+                    {
+                        if (choiceCounter[pin - 'A'] == 1)
+                        {
+                            isInputCounterValid = false;
+                            break;
+                        }
+                        choiceCounter[pin - 'A']++;
+                    }
+                    else
                     {
                         isInputCounterValid = false;
                         break;
                     }
-                    choiceCounter[pin - 'A']++;
-                }
-                else
-                {
-                    isInputCounterValid = false;
-                    break;
                 }
             }
+
             return isInputCounterValid;
         }
 
