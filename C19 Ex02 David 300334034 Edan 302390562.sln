@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C19_Ex02_1", "C19_Ex02_1\C1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "UI\UI.csproj", "{6CC13E2D-0F20-4610-8EB4-9D1C61797900}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameBoardDataManager", "GameBoardData\GameBoardDataManager.csproj", "{A61386AF-EC8C-4391-8E0A-19E3B6CA28B5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BullsAndCows.GameBoard", "GameBoardData\BullsAndCows.GameBoard.csproj", "{A61386AF-EC8C-4391-8E0A-19E3B6CA28B5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BullsAndCows", "BullsEye\BullsAndCows.csproj", "{1EBC2ECD-9543-4A03-98F0-1F60BE17A9A1}"
 EndProject

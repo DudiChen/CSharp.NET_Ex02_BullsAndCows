@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Runtime.Remoting.Services;
 using System.Text;
-using GameBoardDataManager;
+using BullsAndCows.GameBoard;
 
 namespace UI
 {

@@ -38,9 +38,9 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GameBoardData\GameBoardDataManager.csproj">
+    <ProjectReference Include="..\GameBoardData\BullsAndCows.GameBoard.csproj">
       <Project>{a61386af-ec8c-4391-8e0a-19e3b6ca28b5}</Project>
-      <Name>GameBoardDataManager</Name>
+      <Name>BullsAndCows.GameBoard</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

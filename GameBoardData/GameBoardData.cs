@@ -1,5 +1,5 @@
 ﻿
-namespace GameBoardDataManager
+namespace BullsAndCows.GameBoard
 {
 
     public class GameBoardData
