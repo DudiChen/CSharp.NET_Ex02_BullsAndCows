@@ -30,6 +30,14 @@ namespace BullsAndCows.GameBoard
             
         }
 
+        public int TurnsPlayed
+        {
+            get
+            {
+                return m_Turns.Count;
+            }
+        }
+
         public void AddTurn(Turn i_NewTurn)
         {
             if (m_Turns.Count < m_Turns.Capacity)
