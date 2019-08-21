@@ -17,6 +17,7 @@ namespace UI
         private const string k_HiddenGuess = "# # # #";
         private const string k_Separator = "|=========|=======|";
         private const string k_TableHeader = "|Pins:    |Result:|";
+        private const string k_MainHeader = "Current board statuse:";
         private const int k_ResultStringLength = 8;
 
         private UIManager()
@@ -68,6 +69,7 @@ Reenter a number:");
         {
             StringBuilder gameBoardString = new StringBuilder();
             Screen.Clear();
+            gameBoardString.AppendFormat("{1}{0}", Environment.NewLine, k_MainHeader);
             gameBoardString.AppendFormat("{1}{0}{2}{0}", Environment.NewLine, k_TableHeader, k_Separator);
             gameBoardString.AppendFormat("| {1} |{2}|{0}{3}{0}", Environment.NewLine, k_HiddenGuess, k_EmptyResult, k_Separator);
             for (int i = 0; i < i_Data.TotalNumberOfTurns; i++)
@@ -117,9 +119,22 @@ Reenter a number:");
 
         }
 
-        public static void NotifySuccess()
+        public static void NotifySuccess(ushort i_NumberOfTurns)
         {
-            System.Console.WriteLine("Congratulations! you have guessed the correct sequence!");
+            System.Console.WriteLine("Congratulations! you have guessed after {0} steps!",i_NumberOfTurns);
+        }
+        public static bool PrompedNewGameQuery()
+        {
+            System.Console.WriteLine("Would you like to start a new game? <y/n>");
+            string userInput = System.Console.ReadLine();
+            while (!IOHandler.InputValidationUtils.YesNoValidator(userInput))
+            {
+                System.Console.WriteLine("Input is incorrect. please reenter decision:");
+                userInput = System.Console.ReadLine();
+
+            }
+
+            return "Y".Equals(userInput);
         }
     }
 }

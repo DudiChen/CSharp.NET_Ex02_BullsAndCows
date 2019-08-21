@@ -78,15 +78,15 @@ namespace BullsAndCows.GameBoard
         private Pin[] GeneratePinGoalSequence()
         {
             Pin[] goalPinsSequence = new Pin[GameProperties.PinsSequenceLength];
+            Random randomizer = new Random();
 
             for (int i = 0; i < goalPinsSequence.Length; i++)
             {
-                Random randomizer = new Random();
                 int colorNumber = randomizer.Next(GameProperties.NumberOfPinColors);
                 eColors color = (eColors)colorNumber;
                 if (i > 0)
                 {
-                    while (!IsUniquePinColor(goalPinsSequence, color, i - 1))
+                    while (!IsUniquePinColor(goalPinsSequence, color, i))
                     {
                         colorNumber = randomizer.Next(GameProperties.NumberOfPinColors);
                         color = (eColors)colorNumber;

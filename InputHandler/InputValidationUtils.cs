@@ -16,6 +16,7 @@ namespace UI.IOHandler
         {
             A,B,C,D,E,F,G,H
         }
+      
         // public const ushort k_NumberOfPinTypes = 8;
         public static bool ValidateUserInput(string i_UserInputString)
         {
@@ -40,6 +41,12 @@ namespace UI.IOHandler
         {
             return (i_inputUshort > GameProperties.MaximumNumberOfTries ||
                 i_inputUshort < GameProperties.MinimumNumberOfTries);
+        }
+        public static bool YesNoValidator(string i_UserInput)
+        {
+
+            return (("Y".Equals(i_UserInput)) || ("N".Equals(i_UserInput)));
+           
         }
         ////public static Turn CompareUserGuess(Pin[] i_UserGuessedPins, Pin[] i_GoalSequence)
         ////{
