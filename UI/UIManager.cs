@@ -39,13 +39,13 @@ Reenter a number:");
         {
             System.Console.WriteLine("Please type your next guess <A B C D> or 'Q' to quit:");
             string userInput = System.Console.ReadLine();
-
-
+          
+            
             while(!UI.IOHandler.InputValidationUtils.ValidateUserInput(userInput))
             {
                 System.Console.WriteLine("Input guess is incorrect. Please insert a new Guess:");
                 userInput = System.Console.ReadLine();
-            }
+        }
 
             return UI.IOHandler.IOConvertors.GuessStringToPinArrayConvertor(userInput);
             
