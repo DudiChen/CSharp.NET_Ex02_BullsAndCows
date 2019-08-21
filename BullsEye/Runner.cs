@@ -23,6 +23,7 @@ namespace BullsAndCows
                 
                 Pin[] userPinsSequence = UI.UIManager.GetUserGuess();
 
+                //gameBoard.AddTurn();
 
             }
 

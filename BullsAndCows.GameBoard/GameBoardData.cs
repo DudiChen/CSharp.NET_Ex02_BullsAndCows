@@ -148,12 +148,12 @@ namespace BullsAndCows.GameBoard
             return result;
         }
 
-        public Turn this[int i_TurnIndex]
-        {
-            get
-            {
-                return m_Turns[i_TurnIndex];
-            }
-        }
+        ////public Turn this[int i_TurnIndex]
+        ////{
+        ////    get
+        ////    {
+        ////        return m_Turns[i_TurnIndex];
+        ////    }
+        ////}
     }
 }
