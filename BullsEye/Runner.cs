@@ -31,7 +31,7 @@ namespace BullsAndCows
 
             if (isSuccessfulGuess)
             {
-                UI.UIManager.NotifySuccess();
+                UI.UIManager.NotifySuccess(gameBoard.TurnsPlayed);
             }
             else
             {
