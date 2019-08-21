@@ -13,29 +13,36 @@ namespace BullsAndCows
         
         public static void Run()
         {
-            int guessNumber = 1;
             bool isSuccessfulGuess = false;
-
+            bool quitGame = false;
             ushort numberOfGuesses = UI.UIManager.GetNumberOfGuesses();
             GameBoardData gameBoard = new GameBoardData(numberOfGuesses);
 
             //// while (!isSuccessfulGuess && guessNumber <= numberOfGuesses)
-            while (!isSuccessfulGuess && gameBoard.TurnsPlayed <= numberOfGuesses)
+            while (!quitGame && !isSuccessfulGuess && gameBoard.TurnsPlayed <= numberOfGuesses)
             {
                 UI.UIManager.DisplayBoard(gameBoard);
-                Pin[] userPinsSequence = UI.UIManager.GetUserGuess();
-                Turn newTurn = gameBoard.CompareUserGuess(userPinsSequence);
-                gameBoard.AddTurn(newTurn);
-                isSuccessfulGuess = newTurn.Results.CorrectInPlacePins == GProperties.PinsSequenceLength;
+                UI.IOHandler.UserReply userReply = UI.UIManager.GetUserGuess();
+                quitGame = userReply.QuitGame;
+                if (!quitGame)
+                {
+                    Pin[] userPinsSequence = userReply.UserPinsSequence;
+                    Turn newTurn = gameBoard.CompareUserGuess(userPinsSequence);
+                    gameBoard.AddTurn(newTurn);
+                    isSuccessfulGuess = newTurn.Results.CorrectInPlacePins == GProperties.PinsSequenceLength;
+                }
             }
 
-            if (isSuccessfulGuess)
+            if (!quitGame)
             {
-                UI.UIManager.NotifySuccess(gameBoard.TurnsPlayed);
-            }
-            else
-            {
-                UI.UIManager.NotifyFailure(gameBoard.GoalSequence);
+                if(isSuccessfulGuess)
+                {
+                    UI.UIManager.NotifySuccess(gameBoard.TurnsPlayed);
+                }
+                else
+                {
+                    UI.UIManager.NotifyFailure(gameBoard.GoalSequence);
+                }
             }
         }
 
