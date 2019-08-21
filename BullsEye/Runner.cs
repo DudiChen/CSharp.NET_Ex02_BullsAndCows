@@ -6,7 +6,6 @@ namespace BullsAndCows
 {
     public class Runner
     {
-        
         public static void Run()
         {
             bool isSuccessfulGuess = false;
@@ -19,6 +18,7 @@ namespace BullsAndCows
                 UI.UIManager.DisplayBoard(gameBoard);
                 BullsAndCows.IO.UserReply userReply = UI.UIManager.GetUserGuess();
                 quitGame = userReply.QuitGame;
+
                 if (!quitGame)
                 {
                     Pin[] userPinsSequence = userReply.UserPinsSequence;

@@ -1,11 +1,11 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using BullsAndCows.GameProperties.Colors;
 
 namespace BullsAndCows.GameBoard
 {
     using GProperties = BullsAndCows.GameProperties.Properties;
+
     public class GameBoardData
     {
         private List<Turn> m_Turns;
@@ -46,7 +46,7 @@ namespace BullsAndCows.GameBoard
         public Turn GetTurn(int i_TurnIndex)
         {
             Turn requestedTurn = null;
-            if (0 <= i_TurnIndex && m_Turns.Count >= i_TurnIndex)
+            if (i_TurnIndex >= 0 && m_Turns.Count >= i_TurnIndex)
             {
                 requestedTurn = m_Turns[i_TurnIndex];
             }
@@ -60,6 +60,7 @@ namespace BullsAndCows.GameBoard
             {
                 return m_GoalSequence;
             }
+
             private set
             {
                 m_GoalSequence = value;
@@ -118,9 +119,6 @@ namespace BullsAndCows.GameBoard
             return result;
         }
 
-       
-
-
         public Turn CompareUserGuess(Pin[] i_UserGuessedPins)
         {
             Turn.Result resultOfGuess = new Turn.Result();
@@ -142,7 +140,6 @@ namespace BullsAndCows.GameBoard
                     }
                 }
             }
-
 
             return new Turn(i_UserGuessedPins, resultOfGuess);
         }

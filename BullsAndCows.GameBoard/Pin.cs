@@ -3,7 +3,6 @@ using BullsAndCows.GameProperties.Colors;
 
 namespace BullsAndCows.GameBoard
 {
-
     public struct Pin
     {
         private eColors m_Color;
@@ -19,6 +18,7 @@ namespace BullsAndCows.GameBoard
             {
                 return m_Color;
             }
+
             set
             {
                 m_Color = value;

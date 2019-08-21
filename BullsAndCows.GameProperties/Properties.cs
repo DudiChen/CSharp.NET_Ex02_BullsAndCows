@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace BullsAndCows.GameProperties
 {
     namespace Colors
