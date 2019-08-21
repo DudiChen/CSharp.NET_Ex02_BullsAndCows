@@ -14,7 +14,6 @@ namespace BullsAndCows.GameProperties
         private const uint k_PinsSequenceLength = 4;
         private static readonly int m_NumberOfPinColors = Enum.GetNames(typeof(eColors)).Length;
 
-
         public static int NumberOfPinColors
         {
             get
@@ -38,6 +37,7 @@ namespace BullsAndCows.GameProperties
                 return k_MaximumNumberOfTries;
             }
         }
+
         public static uint PinsSequenceLength
         {
             get

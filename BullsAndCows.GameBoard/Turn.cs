@@ -5,10 +5,8 @@ namespace BullsAndCows.GameBoard
 {
     using GProperties = BullsAndCows.GameProperties.Properties;
 
-
     public class Turn
     {
-
         public struct Result
         {
             public ushort m_CorrectInPlacePins;
@@ -26,6 +24,7 @@ namespace BullsAndCows.GameBoard
                 {
                     return m_CorrectInPlacePins;
                 }
+
                 set
                 {
                     m_CorrectInPlacePins = value;
@@ -38,12 +37,14 @@ namespace BullsAndCows.GameBoard
                 {
                     return m_CorrectMisplacedPins;
                 }
+
                 set
                 {
                     m_CorrectMisplacedPins = value;
                 }
             }
         }
+
         private readonly Pin[] m_GuessedPins = new Pin[GProperties.PinsSequenceLength];
         private readonly Result m_Result;
 
