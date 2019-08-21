@@ -11,7 +11,7 @@ namespace BullsAndCows
     public class Runner
     {
         
-        public static void PlayGame()
+        public static void Run()
         {
             int guessNumber = 1;
             bool isSuccessfulGuess = false;
