@@ -148,13 +148,7 @@ namespace BullsAndCows.GameBoard
             return result;
         }
 
-        public Turn this[int i_TurnIndex]
-        {
-            get
-            {
-                return m_Turns[i_TurnIndex];
-            }
-        }
+       
 
 
         public Turn CompareUserGuess(Pin[] i_UserGuessedPins)
@@ -182,5 +176,12 @@ namespace BullsAndCows.GameBoard
 
             return new Turn(i_UserGuessedPins, resultOfGuess);
         }
+        ////public Turn this[int i_TurnIndex]
+        ////{
+        ////    get
+        ////    {
+        ////        return m_Turns[i_TurnIndex];
+        ////    }
+        ////}
     }
 }
