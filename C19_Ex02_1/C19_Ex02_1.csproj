@@ -38,6 +38,14 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BullsAndCows.GameBoard\BullsAndCows.GameBoard.csproj">
+      <Project>{1d56f595-916d-4986-afee-b9f121083b17}</Project>
+      <Name>BullsAndCows.GameBoard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BullsAndCows.GameProperties\BullsAndCows.GameProperties.csproj">
+      <Project>{379cc7c0-df78-4898-a2c7-4efd8cb1b5ef}</Project>
+      <Name>BullsAndCows.GameProperties</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BullsEye\BullsAndCows.csproj">
       <Project>{1ebc2ecd-9543-4a03-98f0-1f60be17a9a1}</Project>
       <Name>BullsAndCows</Name>
