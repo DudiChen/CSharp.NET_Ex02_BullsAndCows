@@ -1,7 +1,7 @@
 ﻿using System.Text;
-using BullsAndCows.GameBoard;
-using BullsAndCows.GameProperties.Colors;
 using GProperties = BullsAndCows.GameProperties.Properties;
+using BullsAndCows.GameBoard;
+using eColors = BullsAndCows.GameProperties.Properties.eColors;
 
 namespace BullsAndCows.IO
 {
@@ -34,7 +34,6 @@ namespace BullsAndCows.IO
                 {
                     guessedString.Append(' ');
                 }
-
                 guessedString.Append(ConvertColorToChar(i_GuessedPins[i].Color));
             }
 
@@ -50,7 +49,6 @@ namespace BullsAndCows.IO
         {
             StringBuilder resultString = new StringBuilder();
             ushort numberOfPinsApended = 0;
-
             for (int i = 0; i < i_GuessResultArray.CorrectInPlacePins; i++, numberOfPinsApended++)
             {
                 resultString.Append("V ");
@@ -65,10 +63,9 @@ namespace BullsAndCows.IO
             {
                 resultString.Append("  ");
             }
-
             resultString.Remove(resultString.Length - 1, 1);
-
             return resultString.ToString();
         }
     }
 }
+

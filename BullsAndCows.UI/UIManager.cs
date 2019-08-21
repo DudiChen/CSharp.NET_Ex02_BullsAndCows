@@ -2,7 +2,7 @@
 using System.Text;
 using BullsAndCows;
 using BullsAndCows.GameBoard;
-using BullsAndCows.GameProperties.Colors;
+using eColors = BullsAndCows.GameProperties.Properties.eColors;
 using GProperties = BullsAndCows.GameProperties.Properties;
 using BullsAndCows.IO;
 using Ex02.ConsoleUtils;
