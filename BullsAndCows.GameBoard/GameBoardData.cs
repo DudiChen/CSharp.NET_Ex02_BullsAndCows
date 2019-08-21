@@ -17,17 +17,27 @@ namespace BullsAndCows.GameBoard
         ////public const uint k_NumberOfPinsToGuess = 4;
         
         ////private Turn[] m_Turns = new Turn[k_MaximumNumberOfTries];
-        //private Turn[] m_Turns;
+        ////private Turn[] m_Turns;
         private List<Turn> m_Turns;
         private Pin[] m_GoalSequence;
+        private ushort m_TotalNumberOfTurns;
 
         public GameBoardData(ushort i_NumberOfGuesses)
         {
+            m_TotalNumberOfTurns = i_NumberOfGuesses;
             //m_Turns = new Turn[i_NumberOfGuesses];
             m_Turns = new List<Turn>(i_NumberOfGuesses);
             this.GoalSequence = GeneratePinGoalSequence();
             ////m_NumberOfPinColors = 
             
+        }
+
+        public int TotalNumberOfTurns
+        {
+            get
+            {
+                return m_TotalNumberOfTurns;
+            }
         }
 
         public int TurnsPlayed
@@ -68,9 +78,6 @@ namespace BullsAndCows.GameBoard
                 m_GoalSequence = value;
             }
         }
-
-       
-
 
         private Pin[] GeneratePinGoalSequence()
         {
