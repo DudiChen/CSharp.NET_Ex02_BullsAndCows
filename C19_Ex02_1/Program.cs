@@ -10,8 +10,12 @@ namespace BullsAndCows
 
         public static void Main()
         {
-            BullsAndCows.Runner.PlayGame();
-         
+            bool playGame = true;
+            while (playGame)
+            {
+                BullsAndCows.Runner.Run();
+                playGame = UI.UIManager.PromptNewGameQuery();
+            }
         }
     }
 }

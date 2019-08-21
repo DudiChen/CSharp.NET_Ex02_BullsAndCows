@@ -11,7 +11,7 @@ namespace BullsAndCows
     public class Runner
     {
         
-        public static void PlayGame()
+        public static void Run()
         {
             ////int guessNumber = 1;
             bool isSuccessfulGuess = false;
@@ -35,7 +35,7 @@ namespace BullsAndCows
 
             if (isSuccessfulGuess)
             {
-                UI.UIManager.NotifySuccess();
+                UI.UIManager.NotifySuccess(gameBoard.TurnsPlayed);
             }
             else
             {
