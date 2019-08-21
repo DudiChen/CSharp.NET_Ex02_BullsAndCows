@@ -14,6 +14,7 @@ namespace UI
         private const string k_EmptyResult = "       ";
         private const string k_EmptyGuess  = "       ";
         private const string k_HiddenGuess = "# # # #";
+        private const int k_ResultStringLength = 8;
 
         private UIManager()
         {
@@ -70,7 +71,7 @@ Reenter a number:");
 
         private static string resultStringBuilder(Turn.Result i_GuessResultArray)
         {
-            StringBuilder resultString = new StringBuilder(8);
+            StringBuilder resultString = new StringBuilder(k_ResultStringLength);
             ushort numberOfPinsApended = 0;
             for (int i = 0; i < i_GuessResultArray.CorrectInPlacePins; i++, numberOfPinsApended++)
             {
@@ -86,8 +87,7 @@ Reenter a number:");
             {
                 resultString.Append("  ");
             }
-
-            resultString.Remove(8, 1);
+            resultString.Remove(k_ResultStringLength-1, 1);
             return resultString.ToString();
         }
     }
