@@ -4,7 +4,6 @@ using GProperties = BullsAndCows.GameProperties.Properties;
 
 namespace BullsAndCows
 {
-
     public class Runner
     {
         
@@ -15,7 +14,7 @@ namespace BullsAndCows
             ushort numberOfGuesses = UI.UIManager.GetNumberOfGuesses();
             GameBoardData gameBoard = new GameBoardData(numberOfGuesses);
 
-            while (!quitGame && !isSuccessfulGuess && gameBoard.TurnsPlayed <= numberOfGuesses)
+            while (!quitGame && !isSuccessfulGuess && gameBoard.TurnsPlayed < numberOfGuesses)
             {
                 UI.UIManager.DisplayBoard(gameBoard);
                 BullsAndCows.IO.UserReply userReply = UI.UIManager.GetUserGuess();
