@@ -39,6 +39,15 @@ namespace BullsAndCows.GameBoard
             }
         }
 
+        public int NumberOfPinColors
+        {
+            get
+            {
+                return m_NumberOfPinColors;
+            }
+        }
+
+
         private Pin[] GeneratePinGoalSequence()
         {
             Pin[] goalPinsSequence = new Pin[GameProperties.PinsSequenceLength];

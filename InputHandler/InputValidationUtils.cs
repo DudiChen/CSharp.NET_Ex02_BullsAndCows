@@ -4,17 +4,23 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using BullsAndCows.GameBoard;
 using BullsAndCows.GameProperties.Colors;
-using GameProperties = BullsAndCows.GameProperties.Properties;
+////using GameProperties = BullsAndCows.GameProperties.Properties;
 
 namespace UI.IOHandler
 {
+    using GameProperties = BullsAndCows.GameProperties.Properties;
+
     public class InputValidationUtils
     {
         // public const ushort k_NumberOfPinTypes = 8;
         public static bool ValidateUserInput(string i_UserInputString)
         {
             bool isInputCounterValid = true;
-            int[] choiceCounter = new int[GameBoardData.k_NumberOfPinTypes];
+
+            ////int[] choiceCounter = new int[GameBoardData.k_NumberOfPinTypes];
+            //// ADDED A WORKAROUND:
+            int[] choiceCounter = new int[GameProperties.NumberOfPinColors];
+
             for (int i = 0; i < i_UserInputString.Length && isInputCounterValid; i++)
             {
                 char pin = i_UserInputString[i];

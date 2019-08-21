@@ -12,9 +12,19 @@ namespace BullsAndCows.GameProperties
     }
     public class Properties
     {
+        private const uint k_NumberOfPinColors = 8;
         private const uint k_MinimumNumberOfTries = 4;
         private const uint k_MaximumNumberOfTries = 10;
         private const uint k_PinsSequenceLength = 4;
+
+        public static uint NumberOfPinColors
+        {
+            get
+            {
+                return k_NumberOfPinColors;
+            }
+        }
+
         public static uint MinimumNumberOfTries
         {
             get
