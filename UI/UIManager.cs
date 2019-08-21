@@ -81,26 +81,6 @@ Reenter a number:");
                 i_PinResult);
         }
 
-        private static string resultStringBuilder(Turn.Result i_GuessResultArray)
-        {
-            StringBuilder resultString = new StringBuilder(k_ResultStringLength);
-            ushort numberOfPinsApended = 0;
-            for (int i = 0; i < i_GuessResultArray.CorrectInPlacePins; i++, numberOfPinsApended++)
-            {
-                resultString.Append("V ");
-            }
-
-            for (int i = 0; i < i_GuessResultArray.CorrectMisplacedPins; i++, numberOfPinsApended++)
-            {
-                resultString.Append("X ");
-            }
-
-            for (int i = numberOfPinsApended; i < GameProperties.PinsSequenceLength; i++)
-            {
-                resultString.Append("  ");
-            }
-            resultString.Remove(k_ResultStringLength-1, 1);
-            return resultString.ToString();
-        }
+       
     }
 }
