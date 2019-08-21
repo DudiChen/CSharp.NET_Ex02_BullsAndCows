@@ -48,71 +48,31 @@ namespace UI.IOHandler
             return isInputCounterValid;
         }
 
-        public static Turn CompareUserGuess(Pin[] i_UserGuessedPins, Pin[] i_GoalSequence)
-        {
-            Turn.Result resultOfGuess = new Turn.Result();
+        ////public static Turn CompareUserGuess(Pin[] i_UserGuessedPins, Pin[] i_GoalSequence)
+        ////{
+        ////    Turn.Result resultOfGuess = new Turn.Result();
 
-            for (int j = 0; j < i_GoalSequence.Length; j++)
-            {
-                for (int i = 0; i < i_UserGuessedPins.Length; i++)
-                {
-                    if (i_GoalSequence[j].Color == i_UserGuessedPins[i].Color)
-                    {
-                        if (i == j)
-                        {
-                            resultOfGuess.CorrectInPlacePins++;
-                        }
-                        else
-                        {
-                            resultOfGuess.m_CorrectMisplacedPins++;
-                        }
-                    }
-                }
-            }
+        ////    for (int j = 0; j < i_GoalSequence.Length; j++)
+        ////    {
+        ////        for (int i = 0; i < i_UserGuessedPins.Length; i++)
+        ////        {
+        ////            if (i_GoalSequence[j].Color == i_UserGuessedPins[i].Color)
+        ////            {
+        ////                if (i == j)
+        ////                {
+        ////                    resultOfGuess.CorrectInPlacePins++;
+        ////                }
+        ////                else
+        ////                {
+        ////                    resultOfGuess.m_CorrectMisplacedPins++;
+        ////                }
+        ////            }
+        ////        }
+        ////    }
 
 
-            return new Turn(i_UserGuessedPins,resultOfGuess);
-        }
-
-        private static Pin[] GuessStringToPinArrayConvertor(string i_GuessString)
-        {
-            Pin[] guessedPins = new Pin[GameProperties.PinsSequenceLength];
-            
-            string[] guessedStringArray = i_GuessString.Split(' ');
-
-            for (int i = 0; i < guessedPins.Length; i++)
-            {
-                guessedPins[i] = new Pin(ConvertLetterToColor(guessedStringArray[i][0]));
-            }
-
-            return guessedPins;
-        }
-
-        private static eColors ConvertLetterToColor(char i_Letter)
-        {
-            return (eColors)((int)i_Letter - (int)'A');
-        }
-
-        public static string PinArrayToStringConvertor(Pin[] i_GuessedPins)
-        {
-            StringBuilder guessedString = new StringBuilder();
-            for (int i = 0; i < i_GuessedPins.Length; i++)
-            ////foreach (Pin currentPin in i_GuessedPins)
-            {
-                if (i > 0)
-                {
-                    guessedString.Append(' ');
-                } 
-                ////guessedString.Append(ConvertColorToChar(currentPin.Color));
-                guessedString.Append(ConvertColorToChar(i_GuessedPins[i].Color));
-            }
-
-            return guessedString.ToString();
-        }
-
-        private static char ConvertColorToChar(eColors i_Color)
-        {
-            return (char)((int)'A' + (int)i_Color);
-        }
+        ////    return new Turn(i_UserGuessedPins,resultOfGuess);
+        ////}
     }
+       
 }

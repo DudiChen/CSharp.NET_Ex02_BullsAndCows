@@ -38,8 +38,16 @@ Reenter a number:");
         public static Pin[] GetUserGuess()
         {
             System.Console.WriteLine("Please type your next guess <A B C D> or 'Q' to quit:");
-          
-            return System.Console.ReadLine();
+            string userInput = System.Console.ReadLine();
+
+
+            while(!UI.IOHandler.InputValidationUtils.ValidateUserInput(userInput))
+            {
+                System.Console.WriteLine("Input guess is incorrect. Please insert a new Guess:");
+                userInput = System.Console.ReadLine();
+            }
+
+            return UI.IOHandler.IOConvertors.GuessStringToPinArrayConvertor(userInput);
             
         }
 
@@ -49,17 +57,17 @@ Reenter a number:");
                 @"|Pins:    |Result:|
 |=========|=======|");
             printBoardRow(k_HiddenGuess, k_EmptyResult);
-            foreach (Turn turn in i_Data.m_Turns)
-            {
-                if (turn.Guess.Equals(string.Empty))
-                {
-                    printBoardRow(k_EmptyGuess, k_EmptyResult);
-                }
-                else
-                {
-                    printBoardRow(turn.Guess, resultStringBuilder(turn.PinResult));
-                }
-            }
+            //foreach (Turn turn in i_Data.m_Turns)
+            //{
+            //    if (turn.Guess.Equals(string.Empty))
+            //    {
+            //        printBoardRow(k_EmptyGuess, k_EmptyResult);
+            //    }
+            //    else
+            //    {
+            //        printBoardRow(turn.Guess, resultStringBuilder(turn.PinResult));
+            //    }
+            //}
         }
 
         private static void printBoardRow(string i_PinsToPrint, string i_PinResult)

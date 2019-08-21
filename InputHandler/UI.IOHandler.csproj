@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="InputValidationUtils.cs" />
+    <Compile Include="IOConvertors.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
