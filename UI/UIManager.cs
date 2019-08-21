@@ -47,6 +47,8 @@ Reenter a number:");
                 @"|Pins:    |Result:|
 |=========|=======|");
             printBoardRow(k_HiddenGuess, k_EmptyResult);
+            //////
+            //////
             foreach (Turn turn in i_Data.m_Turns)
             {
                 if (turn.Guess.Equals(string.Empty))

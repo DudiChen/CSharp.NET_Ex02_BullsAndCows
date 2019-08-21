@@ -22,6 +22,7 @@ namespace BullsAndCows
             while (!isSuccessfulGuess && guessNumber <= numberOfGuesses)
             {
                 UI.UIManager.DisplayBoard(gameBoard);
+                //// What I want GetUserGuess() to return:
                 Pin[] userPinsSequence = UI.UIManager.GetUserGuess();
 
             }
