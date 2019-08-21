@@ -15,6 +15,8 @@ namespace UI
         private const string k_EmptyResult = "       ";
         private const string k_EmptyGuess = "       ";
         private const string k_HiddenGuess = "# # # #";
+        private const string k_Separator = "|=========|=======|";
+        private const string k_TableHeader = "|Pins:    |Result:|";
         private const int k_ResultStringLength = 8;
 
         private UIManager()
@@ -54,46 +56,49 @@ Reenter a number:");
 
         public static void DisplayBoard(GameBoardData i_Data)
         {
+            StringBuilder gameBoardString = new StringBuilder();
             Screen.Clear();
-            System.Console.WriteLine(
-                @"|Pins:    |Result:|
-|=========|=======|");
-            printBoardRow(k_HiddenGuess, k_EmptyResult);
-            for (int i = 0; i < i_Data.TurnsPlayed; i++)
+            gameBoardString.AppendFormat("{1}{0}{2}{0}", Environment.NewLine,k_TableHeader, k_Separator);
+            gameBoardString.AppendFormat("| {1} |{2}|{0}{3}{0}", Environment.NewLine, k_HiddenGuess, k_EmptyResult, k_Separator);
+            for (int i = 0; i < i_Data.TotalNumberOfTurns; i++)
             {
-                
-                if (turn.Guess.Equals(string.Empty))
+
+                if (i >= i_Data.TurnsPlayed)
                 {
-                    printBoardRow(k_EmptyGuess, k_EmptyResult);
+                    gameBoardString.AppendFormat("| {1} |{2}|{0}{3}{0}", Environment.NewLine, k_EmptyGuess, k_EmptyResult, k_Separator);
                 }
                 else
                 {
-                    printBoardRow(
+                    gameBoardString.AppendFormat(
+                        "| {1} |{2}|{0}{3}{0}",
+                        Environment.NewLine,
                         IOConvertors.PinArrayToStringConvertor(i_Data.GetTurn(i).Guess),
-                        IOConvertors.resultStringBuilder(i_Data.GetTurn(i).Results));
+                        IOConvertors.resultStringBuilder(i_Data.GetTurn(i).Results),
+                        k_Separator);
+                   
                 }
             }
-            //foreach (Turn turn in i_Data.m_Turns)
-            //{
-            //    if (turn.Guess.Equals(string.Empty))
-            //    {
-            //        printBoardRow(k_EmptyGuess, k_EmptyResult);
-            //    }
-            //    else
-            //    {
-            //        printBoardRow(turn.Guess, resultStringBuilder(turn.PinResult));
-            //    }
-            //}
+
+
+
+            ////printBoardRow(k_HiddenGuess, k_EmptyResult);
+            ////for (int i = 0; i < i_Data.TotalNumberOfTurns; i++)
+            ////{
+
+            ////    if (i <= i_Data.TurnsPlayed)
+            ////    {
+            ////        printBoardRow(k_EmptyGuess, k_EmptyResult);
+            ////    }
+            ////    else
+            ////    {
+            ////        printBoardRow(
+            ////            IOConvertors.PinArrayToStringConvertor(i_Data.GetTurn(i).Guess),
+            ////            IOConvertors.resultStringBuilder(i_Data.GetTurn(i).Results));
+            ////    }
+            ////}
+            System.Console.WriteLine(gameBoardString);
         }
 
-        private static void printBoardRow(string i_PinsToPrint, string i_PinResult)
-        {
-            System.Console.WriteLine(
-                @"| {0} |{1}|
-|=========|=======|",
-                i_PinsToPrint,
-                i_PinResult);
-        }
 
 
     }
