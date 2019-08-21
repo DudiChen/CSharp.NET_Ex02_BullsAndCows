@@ -15,6 +15,7 @@ namespace BullsAndCows
 
         public static void Main()
         {
+            BullsAndCows.Runner.PlayGame();
          
         }
     }

@@ -26,7 +26,7 @@ namespace UI
         {
             ushort inputUshortNumber;
 
-            System.Console.WriteLine("Please insert how many guesses you want to have (between {0} and {1}) in this game: ",GameProperties.MaximumNumberOfTries, GameProperties.MaximumNumberOfTries);
+            System.Console.WriteLine("Please insert how many guesses you want to have (between {0} and {1}) in this game: ",GameProperties.MinimumNumberOfTries, GameProperties.MaximumNumberOfTries);
             while (!ushort.TryParse(System.Console.ReadLine(), out inputUshortNumber))
             {
                 System.Console.WriteLine(@"The input that was entered was not the correct type!
