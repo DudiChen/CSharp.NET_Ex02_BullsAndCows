@@ -53,8 +53,8 @@ namespace UI.IOHandler
 
         public static Turn CompareUserGuess(string i_UserInputString, string i_Guess)
         {
-            Turn currentTurn = new Turn();
             Turn.Result resultOfGuess = new Turn.Result();
+
             for (int j = 0; j < i_Guess.Length; j++)
             {
                 for (int i = 0; i < i_UserInputString.Length; i++)
@@ -73,16 +73,14 @@ namespace UI.IOHandler
                 }
             }
 
-            currentTurn.PinResult = resultOfGuess;
-            return currentTurn;
+
+            return new Turn(GuessStringToPinArrayConvertor(i_UserInputString),resultOfGuess) ;
         }
 
         private static Pin[] GuessStringToPinArrayConvertor(string i_GuessString)
         {
             Pin[] guessedPins = new Pin[GameProperties.PinsSequenceLength];
-            ////////////////////////////////////////////////
-            ///// ?? - Does the string contain spaces? /////
-            ////////////////////////////////////////////////
+            
             string[] guessedStringArray = i_GuessString.Split(' ');
 
             for (int i = 0; i < guessedPins.Length; i++)
