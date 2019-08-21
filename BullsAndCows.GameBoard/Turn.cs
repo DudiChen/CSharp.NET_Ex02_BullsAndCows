@@ -1,5 +1,5 @@
 ﻿using System;
-using BullsAndCows.GameProperties.Colors;
+using eColors = BullsAndCows.GameProperties.Properties.eColors;
 
 namespace BullsAndCows.GameBoard
 {
