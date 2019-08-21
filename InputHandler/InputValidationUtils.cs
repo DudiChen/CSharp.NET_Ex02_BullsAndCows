@@ -48,6 +48,12 @@ namespace UI.IOHandler
             return (("Y".Equals(i_UserInput)) || ("N".Equals(i_UserInput)));
            
         }
+        public static bool QuitValidator(string i_UserInput)
+        {
+
+            return ("Q".Equals(i_UserInput));
+
+        }
         ////public static Turn CompareUserGuess(Pin[] i_UserGuessedPins, Pin[] i_GoalSequence)
         ////{
         ////    Turn.Result resultOfGuess = new Turn.Result();

@@ -49,19 +49,28 @@ Reenter a number:");
             return inputUshortNumber;
         }
 
-        public static Pin[] GetUserGuess()
+        public static UserReply GetUserGuess()
         {
+            UserReply result;
             System.Console.WriteLine("Please type your next guess <A B C D> or 'Q' to quit:");
             string userInput = System.Console.ReadLine();
-
-
-            while (!UI.IOHandler.InputValidationUtils.ValidateUserInput(userInput))
+            bool quitGame = IOHandler.InputValidationUtils.QuitValidator(userInput);
+            while (!quitGame && !UI.IOHandler.InputValidationUtils.ValidateUserInput(userInput))
             {
-                System.Console.WriteLine("Input guess is incorrect. Please insert a new Guess:");
+                System.Console.WriteLine("Input guess is incorrect. Please insert a new input:");
                 userInput = System.Console.ReadLine();
+                quitGame = IOHandler.InputValidationUtils.QuitValidator(userInput);
+            }
+            if (!quitGame)
+            {
+                result = new UserReply(quitGame, UI.IOHandler.IOConvertors.GuessStringToPinArrayConvertor(userInput));
+            }
+            else
+            {
+                result = new UserReply(quitGame, null);
             }
 
-            return UI.IOHandler.IOConvertors.GuessStringToPinArrayConvertor(userInput);
+            return result;
 
         }
 
@@ -119,13 +128,13 @@ Reenter a number:");
 
         }
 
-        public static void NotifySuccess(ushort i_NumberOfTurns)
+        public static void NotifySuccess(int i_NumberOfTurns)
         {
-            System.Console.WriteLine("Congratulations! you have guessed after {0} steps!",i_NumberOfTurns);
+            System.Console.WriteLine("Congratulations! you have guessed after {0} steps!", i_NumberOfTurns);
         }
-        public static bool PrompedNewGameQuery()
+        public static bool PromptNewGameQuery()
         {
-            System.Console.WriteLine("Would you like to start a new game? <y/n>");
+            System.Console.WriteLine("Would you like to start a new game? <Y/N>");
             string userInput = System.Console.ReadLine();
             while (!IOHandler.InputValidationUtils.YesNoValidator(userInput))
             {

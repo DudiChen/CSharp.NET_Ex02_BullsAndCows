@@ -37,6 +37,7 @@
   <ItemGroup>
     <Compile Include="InputValidationUtils.cs" />
     <Compile Include="IOConvertors.cs" />
+    <Compile Include="UserReply.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
