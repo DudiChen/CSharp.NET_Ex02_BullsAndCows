@@ -1,14 +1,16 @@
 ﻿using System;
 
-using BullsAndCows;
+//using BullsAndCows;
 using BullsAndCows.GameBoard;
+using GProperties = BullsAndCows.GameProperties.Properties;
 
 namespace BullsAndCows
 {
+    
 
     public class Runner
     {
-
+        
         public static void PlayGame()
         {
             int guessNumber = 1;
@@ -17,16 +19,24 @@ namespace BullsAndCows
             ushort numberOfGuesses = UI.UIManager.GetNumberOfGuesses();
             GameBoardData gameBoard = new GameBoardData(numberOfGuesses);
 
-            while (!isSuccessfulGuess && guessNumber <= numberOfGuesses)
+            //// while (!isSuccessfulGuess && guessNumber <= numberOfGuesses)
+            while (!isSuccessfulGuess && gameBoard.TurnsPlayed <= numberOfGuesses)
             {
                 UI.UIManager.DisplayBoard(gameBoard);
-                
                 Pin[] userPinsSequence = UI.UIManager.GetUserGuess();
-
-                //gameBoard.AddTurn();
-
+                Turn newTurn = gameBoard.CompareUserGuess(userPinsSequence);
+                gameBoard.AddTurn(newTurn);
+                isSuccessfulGuess = newTurn.Results.CorrectInPlacePins == GProperties.PinsSequenceLength;
             }
 
+            if (isSuccessfulGuess)
+            {
+                UI.UIManager.NotifySuccess();
+            }
+            else
+            {
+                UI.UIManager.NotifyFailure(gameBoard.GoalSequence);
+            }
         }
 
 
