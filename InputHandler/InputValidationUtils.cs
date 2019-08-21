@@ -36,7 +36,10 @@ namespace UI.IOHandler
 
             return isInputCounterValid;
         }
+        public static bool IsOutOfBound(ushort i_inputUshort)
+        {
 
+        }
         ////public static Turn CompareUserGuess(Pin[] i_UserGuessedPins, Pin[] i_GoalSequence)
         ////{
         ////    Turn.Result resultOfGuess = new Turn.Result();
@@ -60,8 +63,8 @@ namespace UI.IOHandler
         ////    }
 
 
-        ////    return new Turn(i_UserGuessedPins,resultOfGuess);
+        ////    return new Turn(i_UserGuessedPins, resultOfGuess);
         ////}
     }
-       
+
 }

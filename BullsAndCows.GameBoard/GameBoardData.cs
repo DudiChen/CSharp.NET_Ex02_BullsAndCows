@@ -157,5 +157,32 @@ namespace BullsAndCows.GameBoard
                 return m_Turns[i_TurnIndex];
             }
         }
+
+
+        public Turn CompareUserGuess(Pin[] i_UserGuessedPins)
+        {
+            Turn.Result resultOfGuess = new Turn.Result();
+
+            for (int j = 0; j < m_GoalSequence.Length; j++)
+            {
+                for (int i = 0; i < i_UserGuessedPins.Length; i++)
+                {
+                    if (m_GoalSequence[j].Color == i_UserGuessedPins[i].Color)
+                    {
+                        if (i == j)
+                        {
+                            resultOfGuess.CorrectInPlacePins++;
+                        }
+                        else
+                        {
+                            resultOfGuess.m_CorrectMisplacedPins++;
+                        }
+                    }
+                }
+            }
+
+
+            return new Turn(i_UserGuessedPins, resultOfGuess);
+        }
     }
 }

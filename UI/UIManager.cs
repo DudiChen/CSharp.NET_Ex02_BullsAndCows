@@ -29,7 +29,10 @@ namespace UI
             ushort inputUshortNumber;
 
             System.Console.WriteLine("Please insert how many guesses you want to have (between {0} and {1}) in this game: ", GameProperties.MinimumNumberOfTries, GameProperties.MaximumNumberOfTries);
-            while (!ushort.TryParse(System.Console.ReadLine(), out inputUshortNumber))
+            bool parseResult = ushort.TryParse(System.Console.ReadLine(), out inputUshortNumber);
+            while (!parseResult ||
+                (inputUshortNumber > GameProperties.MaximumNumberOfTries &&
+                inputUshortNumber < GameProperties.MinimumNumberOfTries))
             {
                 System.Console.WriteLine(@"The input that was entered was not the correct type!
 Reenter a number:");
@@ -58,7 +61,7 @@ Reenter a number:");
         {
             StringBuilder gameBoardString = new StringBuilder();
             Screen.Clear();
-            gameBoardString.AppendFormat("{1}{0}{2}{0}", Environment.NewLine,k_TableHeader, k_Separator);
+            gameBoardString.AppendFormat("{1}{0}{2}{0}", Environment.NewLine, k_TableHeader, k_Separator);
             gameBoardString.AppendFormat("| {1} |{2}|{0}{3}{0}", Environment.NewLine, k_HiddenGuess, k_EmptyResult, k_Separator);
             for (int i = 0; i < i_Data.TotalNumberOfTurns; i++)
             {
@@ -75,7 +78,7 @@ Reenter a number:");
                         IOConvertors.PinArrayToStringConvertor(i_Data.GetTurn(i).Guess),
                         IOConvertors.resultStringBuilder(i_Data.GetTurn(i).Results),
                         k_Separator);
-                   
+
                 }
             }
 
