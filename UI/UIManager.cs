@@ -30,12 +30,19 @@ namespace UI
 
             System.Console.WriteLine("Please insert how many guesses you want to have (between {0} and {1}) in this game: ", GameProperties.MinimumNumberOfTries, GameProperties.MaximumNumberOfTries);
             bool parseResult = ushort.TryParse(System.Console.ReadLine(), out inputUshortNumber);
-            while (!parseResult ||
-                (inputUshortNumber > GameProperties.MaximumNumberOfTries &&
-                inputUshortNumber < GameProperties.MinimumNumberOfTries))
+            while (!parseResult || InputValidationUtils.IsOutOfBound(inputUshortNumber))
             {
-                System.Console.WriteLine(@"The input that was entered was not the correct type!
+                if (!parseResult)
+                {
+                    System.Console.WriteLine(@"The input that was entered was not the correct type!
 Reenter a number:");
+                }
+                else
+                {
+                    System.Console.WriteLine(@"Input out of bound please reenter a number:");
+                }
+                parseResult = ushort.TryParse(System.Console.ReadLine(), out inputUshortNumber);
+
             }
 
             return inputUshortNumber;
@@ -102,7 +109,17 @@ Reenter a number:");
             System.Console.WriteLine(gameBoardString);
         }
 
+        public static void NotifyFailure(Pin[] i_Goalsequence)
+        {
+            System.Console.WriteLine(
+                @"you have failed to guess the apponentes sequence <{0}> ",
+                IOConvertors.PinArrayToStringConvertor(i_Goalsequence));
 
+        }
 
+        public static void NotifySuccess()
+        {
+            System.Console.WriteLine("Congratulations! you have guessed the correct sequence!");
+        }
     }
 }

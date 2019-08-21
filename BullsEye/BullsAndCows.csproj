@@ -45,6 +45,10 @@
       <Project>{1d56f595-916d-4986-afee-b9f121083b17}</Project>
       <Name>BullsAndCows.GameBoard</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BullsAndCows.GameProperties\BullsAndCows.GameProperties.csproj">
+      <Project>{379cc7c0-df78-4898-a2c7-4efd8cb1b5ef}</Project>
+      <Name>BullsAndCows.GameProperties</Name>
+    </ProjectReference>
     <ProjectReference Include="..\InputHandler\UI.IOHandler.csproj">
       <Project>{57a505ac-a9fc-4ceb-9a96-58fb8cc0854d}</Project>
       <Name>UI.IOHandler</Name>

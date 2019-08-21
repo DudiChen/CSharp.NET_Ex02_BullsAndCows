@@ -5,10 +5,10 @@ using BullsAndCows.GameBoard;
 
 namespace BullsAndCows
 {
-
+     
     public class Runner
     {
-
+        
         public static void PlayGame()
         {
             int guessNumber = 1;

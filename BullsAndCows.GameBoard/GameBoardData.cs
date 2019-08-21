@@ -1,10 +1,8 @@
 ﻿
 using System;
 using System.Collections.Generic;
-using BullsAndCows.GameBoard;
 ////using BullsAndCows.GameBoard.Colors;
 using BullsAndCows.GameProperties.Colors;
-////using GameProperties = BullsAndCows.GameProperties.Properties;
 
 namespace BullsAndCows.GameBoard
 {

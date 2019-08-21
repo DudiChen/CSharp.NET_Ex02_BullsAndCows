@@ -38,7 +38,8 @@ namespace UI.IOHandler
         }
         public static bool IsOutOfBound(ushort i_inputUshort)
         {
-
+            return (i_inputUshort > GameProperties.MaximumNumberOfTries ||
+                i_inputUshort < GameProperties.MinimumNumberOfTries);
         }
         ////public static Turn CompareUserGuess(Pin[] i_UserGuessedPins, Pin[] i_GoalSequence)
         ////{
