@@ -51,15 +51,15 @@ namespace UI.IOHandler
             return isInputCounterValid;
         }
 
-        public static Turn CompareUserGuess(string i_UserInputString, string i_Guess)
+        public static Turn CompareUserGuess(Pin[] i_UserGuessedPins, Pin[] i_GoalSequence)
         {
             Turn.Result resultOfGuess = new Turn.Result();
 
-            for (int j = 0; j < i_Guess.Length; j++)
+            for (int j = 0; j < i_GoalSequence.Length; j++)
             {
-                for (int i = 0; i < i_UserInputString.Length; i++)
+                for (int i = 0; i < i_UserGuessedPins.Length; i++)
                 {
-                    if (i_Guess[j] == i_UserInputString[i])
+                    if (i_GoalSequence[j].Color == i_UserGuessedPins[i].Color)
                     {
                         if (i == j)
                         {
@@ -74,7 +74,7 @@ namespace UI.IOHandler
             }
 
 
-            return new Turn(GuessStringToPinArrayConvertor(i_UserInputString),resultOfGuess) ;
+            return new Turn(i_UserGuessedPins,resultOfGuess);
         }
 
         private static Pin[] GuessStringToPinArrayConvertor(string i_GuessString)

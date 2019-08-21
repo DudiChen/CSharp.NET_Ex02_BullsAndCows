@@ -13,18 +13,18 @@ namespace BullsAndCows.GameBoard
         ////public const int k_MinimumNumberOfTries = 4;
         ////public const int k_MaximumNumberOfTries = 10;
 
-        public const uint k_NumberOfPinsToGuess = 4;
-
+        ////public const uint k_NumberOfPinsToGuess = 4;
+        
         ////private Turn[] m_Turns = new Turn[k_MaximumNumberOfTries];
         private Turn[] m_Turns;
         private Pin[] m_GoalSequence;
-        private int m_NumberOfPinColors;
 
         public GameBoardData(ushort i_NumberOfGuesses)
         {
             m_Turns = new Turn[i_NumberOfGuesses];
             this.GoalSequence = GeneratePinGoalSequence();
-            m_NumberOfPinColors = Enum.GetNames(typeof(eColors)).Length;
+            ////m_NumberOfPinColors = 
+            
         }
 
         public Pin[] GoalSequence
@@ -39,13 +39,7 @@ namespace BullsAndCows.GameBoard
             }
         }
 
-        public int NumberOfPinColors
-        {
-            get
-            {
-                return m_NumberOfPinColors;
-            }
-        }
+       
 
 
         private Pin[] GeneratePinGoalSequence()
@@ -56,13 +50,13 @@ namespace BullsAndCows.GameBoard
             for (int i = 0; i < goalPinsSequence.Length; i++)
             {
                 Random randomizer = new Random();
-                int colorNumber = randomizer.Next(m_NumberOfPinColors);
+                int colorNumber = randomizer.Next(GameProperties.NumberOfPinColors);
                 eColors color = (eColors)colorNumber;
                 if (i > 0)
                 {
                     while (!IsUniquePinColor(goalPinsSequence, color, i - 1))
                     {
-                        colorNumber = randomizer.Next(m_NumberOfPinColors);
+                        colorNumber = randomizer.Next(GameProperties.NumberOfPinColors);
                         color = (eColors)colorNumber;
                     }
                 }

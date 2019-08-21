@@ -39,6 +39,7 @@ Reenter a number:");
         {
             System.Console.WriteLine("Please type your next guess <A B C D> or 'Q' to quit:");
             return System.Console.ReadLine();
+            
         }
 
         public static void DisplayBoard(GameBoardData i_Data)
