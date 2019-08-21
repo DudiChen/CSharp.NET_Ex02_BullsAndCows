@@ -46,6 +46,28 @@ namespace UI.IOHandler
         {
             return (char)((int)'A' + (int)i_Color);
         }
+
+        public static string resultStringBuilder(Turn.Result i_GuessResultArray)
+        {
+            StringBuilder resultString = new StringBuilder();
+            ushort numberOfPinsApended = 0;
+            for (int i = 0; i < i_GuessResultArray.CorrectInPlacePins; i++, numberOfPinsApended++)
+            {
+                resultString.Append("V ");
+            }
+
+            for (int i = 0; i < i_GuessResultArray.CorrectMisplacedPins; i++, numberOfPinsApended++)
+            {
+                resultString.Append("X ");
+            }
+
+            for (int i = numberOfPinsApended; i < GameProperties.PinsSequenceLength; i++)
+            {
+                resultString.Append("  ");
+            }
+            resultString.Remove(resultString.Length - 1, 1);
+            return resultString.ToString();
+        }
     }
 }
 

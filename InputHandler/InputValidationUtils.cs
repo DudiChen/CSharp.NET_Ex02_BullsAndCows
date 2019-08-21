@@ -12,37 +12,26 @@ namespace UI.IOHandler
 
     public class InputValidationUtils
     {
+        enum ePinUIDisplay
+        {
+            A,B,C,D,E,F,G,H
+        }
         // public const ushort k_NumberOfPinTypes = 8;
         public static bool ValidateUserInput(string i_UserInputString)
         {
             bool isInputCounterValid = true;
             int[] choiceCounter = new int[GameProperties.NumberOfPinColors];
-
-            for (int i = 0; i < i_UserInputString.Length && isInputCounterValid; i++)
+            string[] pinsInGuess = i_UserInputString.Split(' ');
+            foreach (string pin in pinsInGuess)
             {
-                char pinColor = i_UserInputString[i];
-
-                if (i % 2 != 0)
+                if (!isInputCounterValid)
                 {
-                    isInputCounterValid = (pinColor == ' ');
+                    break;
                 }
-                else
+                if (!Enum.IsDefined(typeof(ePinUIDisplay), pin))
                 {
-                    if (pinColor >= 'A' && pinColor <= 'H')
-                    {
-                        if (choiceCounter[pinColor - 'A'] == 1)
-                        {
-                            isInputCounterValid = false;
-                            break;
-                        }
-                        choiceCounter[pinColor - 'A']++;
-                    }
-                    else
-                    {
-                        isInputCounterValid = false;
-                        break;
-                    }
-                }
+                    isInputCounterValid = false;
+                }                            
             }
 
             return isInputCounterValid;
