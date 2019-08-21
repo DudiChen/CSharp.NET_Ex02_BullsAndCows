@@ -52,10 +52,6 @@
       <Project>{379cc7c0-df78-4898-a2c7-4efd8cb1b5ef}</Project>
       <Name>BullsAndCows.GameProperties</Name>
     </ProjectReference>
-    <ProjectReference Include="..\InputHandler\UI.IOHandler.csproj">
-      <Project>{57a505ac-a9fc-4ceb-9a96-58fb8cc0854d}</Project>
-      <Name>UI.IOHandler</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

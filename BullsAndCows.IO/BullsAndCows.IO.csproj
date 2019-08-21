@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1EBC2ECD-9543-4A03-98F0-1F60BE17A9A1}</ProjectGuid>
+    <ProjectGuid>{BEA43761-85B3-4337-91E7-6CF89285176C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BullsAndCows</RootNamespace>
-    <AssemblyName>BullsAndCows</AssemblyName>
+    <RootNamespace>BullsAndCows.IO</RootNamespace>
+    <AssemblyName>BullsAndCows.IO</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -35,10 +35,9 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Runner.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="System" />
+    <Compile Include="InputValidationUtils.cs" />
+    <Compile Include="IOConvertors.cs" />
+    <Compile Include="UserReply.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BullsAndCows.GameBoard\BullsAndCows.GameBoard.csproj">
@@ -48,14 +47,6 @@
     <ProjectReference Include="..\BullsAndCows.GameProperties\BullsAndCows.GameProperties.csproj">
       <Project>{379cc7c0-df78-4898-a2c7-4efd8cb1b5ef}</Project>
       <Name>BullsAndCows.GameProperties</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BullsAndCows.IO\BullsAndCows.IO.csproj">
-      <Project>{bea43761-85b3-4337-91e7-6cf89285176c}</Project>
-      <Name>BullsAndCows.IO</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BullsAndCows.UI\BullsAndCows.UI.csproj">
-      <Project>{539f076d-c987-46cb-ba41-fb604edab2e3}</Project>
-      <Name>BullsAndCows.UI</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

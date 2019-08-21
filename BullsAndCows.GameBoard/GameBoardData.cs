@@ -1,21 +1,14 @@
 ﻿
 using System;
 using System.Collections.Generic;
-////using BullsAndCows.GameBoard.Colors;
 using BullsAndCows.GameProperties.Colors;
 
 namespace BullsAndCows.GameBoard
 {
-    using GameProperties = BullsAndCows.GameProperties.Properties;
+    using GProperties = BullsAndCows.GameProperties.Properties;
     public class GameBoardData
     {
-        ////public const int k_MinimumNumberOfTries = 4;
-        ////public const int k_MaximumNumberOfTries = 10;
 
-        ////public const uint k_NumberOfPinsToGuess = 4;
-        
-        ////private Turn[] m_Turns = new Turn[k_MaximumNumberOfTries];
-        ////private Turn[] m_Turns;
         private List<Turn> m_Turns;
         private Pin[] m_GoalSequence;
         private ushort m_TotalNumberOfTurns;
@@ -23,7 +16,6 @@ namespace BullsAndCows.GameBoard
         public GameBoardData(ushort i_NumberOfGuesses)
         {
             m_TotalNumberOfTurns = i_NumberOfGuesses;
-            //m_Turns = new Turn[i_NumberOfGuesses];
             m_Turns = new List<Turn>(i_NumberOfGuesses);
             this.GoalSequence = GeneratePinGoalSequence();
         }
@@ -54,13 +46,13 @@ namespace BullsAndCows.GameBoard
 
         public Turn GetTurn(int i_TurnIndex)
         {
-            Turn turnResult = null;
+            Turn requestedTurn = null;
             if (0 <= i_TurnIndex && m_Turns.Count >= i_TurnIndex)
             {
-                turnResult = m_Turns[i_TurnIndex];
+                requestedTurn = m_Turns[i_TurnIndex];
             }
 
-            return turnResult;
+            return requestedTurn;
         }
 
         public Pin[] GoalSequence
@@ -77,24 +69,23 @@ namespace BullsAndCows.GameBoard
 
         private Pin[] GeneratePinGoalSequence()
         {
-            Pin[] goalPinsSequence = new Pin[GameProperties.PinsSequenceLength];
+            Pin[] goalPinsSequence = new Pin[GProperties.PinsSequenceLength];
             Random randomizer = new Random();
 
             for (int i = 0; i < goalPinsSequence.Length; i++)
             {
-                int colorNumber = randomizer.Next(GameProperties.NumberOfPinColors);
+                int colorNumber = randomizer.Next(GProperties.NumberOfPinColors);
                 eColors color = (eColors)colorNumber;
                 if (i > 0)
                 {
                     while (!IsUniquePinColor(goalPinsSequence, color, i))
                     {
-                        colorNumber = randomizer.Next(GameProperties.NumberOfPinColors);
+                        colorNumber = randomizer.Next(GProperties.NumberOfPinColors);
                         color = (eColors)colorNumber;
                     }
                 }
 
                 goalPinsSequence[i] = new Pin(color);
-                ////m_GoalSequence[i].Color = color;
             }
 
             return goalPinsSequence;
@@ -104,24 +95,6 @@ namespace BullsAndCows.GameBoard
         {
             bool result = true;
             int iterator = 0;
-
-            //// IN ORDER NOT TO USE i_MaxIterator:
-            ////foreach (Pin currentPin in m_GoalSequence)
-            ////{
-            ////    if (!currentPin.Equals(null))
-            ////    {
-            ////        if (i_Color == currentPin.Color)
-            ////        {
-            ////            result = false;
-            ////            break;
-            ////        }
-            ////    }
-            ////    else
-            ////    {
-            ////        break;
-            ////    }
-            ////}
-
 
             foreach (Pin currentPin in i_GoalPinSequence)
             {
@@ -174,12 +147,5 @@ namespace BullsAndCows.GameBoard
 
             return new Turn(i_UserGuessedPins, resultOfGuess);
         }
-        ////public Turn this[int i_TurnIndex]
-        ////{
-        ////    get
-        ////    {
-        ////        return m_Turns[i_TurnIndex];
-        ////    }
-        ////}
     }
 }

@@ -1,17 +1,8 @@
 ﻿using System;
-////using BullsAndCows.GameBoard.Colors;
 using BullsAndCows.GameProperties.Colors;
 
 namespace BullsAndCows.GameBoard
 {
-    ////namespace Colors
-    ////{
-    ////    public enum eColors
-    ////    {
-    ////        Green, Red, Blue, Yellow, Orange, Grey, Pink, Brown
-    ////    }
-    ////}
-
 
     public struct Pin
     {

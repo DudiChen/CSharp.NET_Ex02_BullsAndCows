@@ -17,13 +17,11 @@ namespace BullsAndCows
             bool quitGame = false;
             ushort numberOfGuesses = UI.UIManager.GetNumberOfGuesses();
             GameBoardData gameBoard = new GameBoardData(numberOfGuesses);
-            // debug!!!!!
 
-            //// while (!isSuccessfulGuess && guessNumber <= numberOfGuesses)
             while (!quitGame && !isSuccessfulGuess && gameBoard.TurnsPlayed <= numberOfGuesses)
             {
                 UI.UIManager.DisplayBoard(gameBoard);
-                UI.IOHandler.UserReply userReply = UI.UIManager.GetUserGuess();
+                BullsAndCows.IO.UserReply userReply = UI.UIManager.GetUserGuess();
                 quitGame = userReply.QuitGame;
                 if (!quitGame)
                 {

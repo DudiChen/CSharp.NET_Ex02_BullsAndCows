@@ -1,44 +1,13 @@
 ﻿using System;
-using System.ComponentModel;
-////using BullsAndCows.GameBoard.Colors;
 using BullsAndCows.GameProperties.Colors;
-////using GameProperties = BullsAndCows.GameProperties.Properties;
 
 namespace BullsAndCows.GameBoard
 {
-    using GameProperties = BullsAndCows.GameProperties.Properties;
-    ////public enum eResultFlags
-    ////{
-    ////    None, Bull, Cow
-    ////}
-    ////namespace Colors
-    ////{
-    ////    public enum eColors
-    ////    {
-    ////        Green, Red, Blue, Yellow, Orange, Grey, Pink, Brown
-    ////    }
-    ////}
+    using GProperties = BullsAndCows.GameProperties.Properties;
+
 
     public class Turn
     {
-
-        ////public struct Pin
-        ////{
-        ////    private eColors m_Color;
-
-        ////    public Pin(eColors i_Color)
-        ////    {
-        ////        m_Color = i_Color;
-        ////    }
-
-        ////    public eColors Color
-        ////    {
-        ////        get
-        ////        {
-        ////            return m_Color;
-        ////        }
-        ////    }
-        ////}
 
         public struct Result
         {
@@ -77,7 +46,7 @@ namespace BullsAndCows.GameBoard
         }
 
         //private string m_guess;
-        private readonly Pin[] m_GuessedPins = new Pin[GameProperties.PinsSequenceLength];
+        private readonly Pin[] m_GuessedPins = new Pin[GProperties.PinsSequenceLength];
         private readonly Result m_Result;
 
         public Turn(Pin[] i_GuessedPins, Result i_Result)

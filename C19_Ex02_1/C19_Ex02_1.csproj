@@ -38,13 +38,13 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BullsAndCows.UI\BullsAndCows.UI.csproj">
+      <Project>{539f076d-c987-46cb-ba41-fb604edab2e3}</Project>
+      <Name>BullsAndCows.UI</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BullsEye\BullsAndCows.csproj">
       <Project>{1ebc2ecd-9543-4a03-98f0-1f60be17a9a1}</Project>
       <Name>BullsAndCows</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\UI\UI.csproj">
-      <Project>{6cc13e2d-0f20-4610-8eb4-9d1c61797900}</Project>
-      <Name>UI</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

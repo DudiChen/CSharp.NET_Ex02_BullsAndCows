@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1EBC2ECD-9543-4A03-98F0-1F60BE17A9A1}</ProjectGuid>
+    <ProjectGuid>{539F076D-C987-46CB-BA41-FB604EDAB2E3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BullsAndCows</RootNamespace>
-    <AssemblyName>BullsAndCows</AssemblyName>
+    <RootNamespace>BullsAndCows.UI</RootNamespace>
+    <AssemblyName>BullsAndCows.UI</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -35,10 +35,7 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Runner.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="System" />
+    <Compile Include="UIManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BullsAndCows.GameBoard\BullsAndCows.GameBoard.csproj">
@@ -53,10 +50,11 @@
       <Project>{bea43761-85b3-4337-91e7-6cf89285176c}</Project>
       <Name>BullsAndCows.IO</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BullsAndCows.UI\BullsAndCows.UI.csproj">
-      <Project>{539f076d-c987-46cb-ba41-fb604edab2e3}</Project>
-      <Name>BullsAndCows.UI</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Ex02.ConsoleUtils">
+      <HintPath>..\..\..\..\..\..\..\Temp\Ex02.ConsoleUtils.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
