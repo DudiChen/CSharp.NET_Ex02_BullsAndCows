@@ -5,10 +5,10 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{57A505AC-A9FC-4CEB-9A96-58FB8CC0854D}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>InputHandler</RootNamespace>
-    <AssemblyName>InputHandler</AssemblyName>
+    <RootNamespace>UI.IOHandler</RootNamespace>
+    <AssemblyName>UI.IOHandler</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="InputValidationUtils.cs" />
   </ItemGroup>
@@ -38,6 +41,10 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BullsAndCows.GameProperties\BullsAndCows.GameProperties.csproj">
+      <Project>{379cc7c0-df78-4898-a2c7-4efd8cb1b5ef}</Project>
+      <Name>BullsAndCows.GameProperties</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GameBoardData\BullsAndCows.GameBoard.csproj">
       <Project>{a61386af-ec8c-4391-8e0a-19e3b6ca28b5}</Project>
       <Name>BullsAndCows.GameBoard</Name>

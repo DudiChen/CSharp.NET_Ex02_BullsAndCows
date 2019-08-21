@@ -1,9 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Runtime.Remoting.Services;
 using System.Text;
+using BullsAndCows;
 using BullsAndCows.GameBoard;
+////using BullsAndCows.GameBoard.Colors;
+using BullsAndCows.GameProperties.Colors;
+using GameProperties = BullsAndCows.GameProperties.Properties;
 
 namespace UI
 {
@@ -23,7 +24,7 @@ namespace UI
         {
             ushort inputUshortNumber;
 
-            System.Console.WriteLine("Please insert how many guesses you want to have (between {0} and {1}) in this game: ", GameBoardData.k_MinimumNumberOfTries, GameBoardData.k_MaximumNumberOfTries);
+            System.Console.WriteLine("Please insert how many guesses you want to have (between {0} and {1}) in this game: ",GameProperties.MaximumNumberOfTries, GameProperties.MaximumNumberOfTries);
             while (!ushort.TryParse(System.Console.ReadLine(), out inputUshortNumber))
             {
                 System.Console.WriteLine(@"The input that was entered was not the correct type!
@@ -71,17 +72,17 @@ Reenter a number:");
         {
             StringBuilder resultString = new StringBuilder(8);
             ushort numberOfPinsApended = 0;
-            for (int i = 0; i < i_GuessResultArray.m_CorrectInPlaceUshort; i++, numberOfPinsApended++)
+            for (int i = 0; i < i_GuessResultArray.CorrectInPlacePins; i++, numberOfPinsApended++)
             {
                 resultString.Append("V ");
             }
 
-            for (int i = 0; i < i_GuessResultArray.m_CorrectMisplaceUshort; i++, numberOfPinsApended++)
+            for (int i = 0; i < i_GuessResultArray.CorrectMisplacedPins; i++, numberOfPinsApended++)
             {
                 resultString.Append("X ");
             }
 
-            for (int i = numberOfPinsApended; i < GameBoardData.k_NumberOfPinsToGuess; i++)
+            for (int i = numberOfPinsApended; i < GameProperties.PinsSequenceLength; i++)
             {
                 resultString.Append("  ");
             }

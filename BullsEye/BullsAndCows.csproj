@@ -5,10 +5,10 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{1EBC2ECD-9543-4A03-98F0-1F60BE17A9A1}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BullsEye</RootNamespace>
-    <AssemblyName>BullsEye</AssemblyName>
+    <RootNamespace>BullsAndCows</RootNamespace>
+    <AssemblyName>BullsAndCows</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,11 +31,28 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Run.cs" />
+    <Compile Include="Runner.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GameBoardData\BullsAndCows.GameBoard.csproj">
+      <Project>{a61386af-ec8c-4391-8e0a-19e3b6ca28b5}</Project>
+      <Name>BullsAndCows.GameBoard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InputHandler\UI.IOHandler.csproj">
+      <Project>{57a505ac-a9fc-4ceb-9a96-58fb8cc0854d}</Project>
+      <Name>UI.IOHandler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UI\UI.csproj">
+      <Project>{6cc13e2d-0f20-4610-8eb4-9d1c61797900}</Project>
+      <Name>UI</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

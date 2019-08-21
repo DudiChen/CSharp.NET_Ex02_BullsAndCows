@@ -11,7 +11,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BullsAndCows.GameBoard", "G
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BullsAndCows", "BullsEye\BullsAndCows.csproj", "{1EBC2ECD-9543-4A03-98F0-1F60BE17A9A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InputHandler", "InputHandler\InputHandler.csproj", "{57A505AC-A9FC-4CEB-9A96-58FB8CC0854D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI.IOHandler", "InputHandler\UI.IOHandler.csproj", "{57A505AC-A9FC-4CEB-9A96-58FB8CC0854D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BullsAndCows.GameProperties", "BullsAndCows.GameProperties\BullsAndCows.GameProperties.csproj", "{379CC7C0-DF78-4898-A2C7-4EFD8CB1B5EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{57A505AC-A9FC-4CEB-9A96-58FB8CC0854D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57A505AC-A9FC-4CEB-9A96-58FB8CC0854D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57A505AC-A9FC-4CEB-9A96-58FB8CC0854D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{379CC7C0-DF78-4898-A2C7-4EFD8CB1B5EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{379CC7C0-DF78-4898-A2C7-4EFD8CB1B5EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{379CC7C0-DF78-4898-A2C7-4EFD8CB1B5EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{379CC7C0-DF78-4898-A2C7-4EFD8CB1B5EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

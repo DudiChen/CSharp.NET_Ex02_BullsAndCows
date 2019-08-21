@@ -37,6 +37,12 @@
   <ItemGroup>
     <Reference Include="System" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BullsEye\BullsAndCows.csproj">
+      <Project>{1ebc2ecd-9543-4a03-98f0-1f60be17a9a1}</Project>
+      <Name>BullsAndCows</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

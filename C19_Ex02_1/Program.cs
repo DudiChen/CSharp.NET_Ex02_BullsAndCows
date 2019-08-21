@@ -1,7 +1,7 @@
 ﻿using System;
+using BullsAndCows;
 
-
-namespace C19_Ex02_1
+namespace BullsAndCows
 {
     public class Program
     {

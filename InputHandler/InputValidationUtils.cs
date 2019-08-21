@@ -1,14 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using BullsAndCows.GameBoard;
+using BullsAndCows.GameProperties.Colors;
+using GameProperties = BullsAndCows.GameProperties.Properties;
 
-namespace InputHandler
+namespace UI.IOHandler
 {
     public class InputValidationUtils
     {
         public const ushort k_NumberOfPinTypes = 8;
+
         public static bool ValidateUserInput(string i_UserInputString)
         {
             bool isInputCounterValid = true;
@@ -45,11 +47,11 @@ namespace InputHandler
                     {
                         if (i == j)
                         {
-                            resultOfGuess.m_CorrectInPlaceUshort++;
+                            resultOfGuess.CorrectInPlacePins++;
                         }
                         else
                         {
-                            resultOfGuess.m_CorrectMisplaceUshort++;
+                            resultOfGuess.m_CorrectMisplacedPins++;
                         }
                     }
                 }
@@ -57,6 +59,49 @@ namespace InputHandler
 
             currentTurn.PinResult = resultOfGuess;
             return currentTurn;
+        }
+
+        private static Pin[] GuessStringToPinArrayConvertor(string i_GuessString)
+        {
+            Pin[] guessedPins = new Pin[GameProperties.PinsSequenceLength];
+            ////////////////////////////////////////////////
+            ///// ?? - Does the string contain spaces? /////
+            ////////////////////////////////////////////////
+            string[] guessedStringArray = i_GuessString.Split(' ');
+
+            for (int i = 0; i < guessedPins.Length; i++)
+            {
+                guessedPins[i] = new Pin(ConvertLetterToColor(guessedStringArray[i][0]));
+            }
+
+            return guessedPins;
+        }
+
+        private static eColors ConvertLetterToColor(char i_Letter)
+        {
+            return (eColors)((int)i_Letter - (int)'A');
+        }
+
+        public static string PinArrayToStringConvertor(Pin[] i_GuessedPins)
+        {
+            StringBuilder guessedString = new StringBuilder();
+            for (int i = 0; i < i_GuessedPins.Length; i++)
+            ////foreach (Pin currentPin in i_GuessedPins)
+            {
+                if (i > 0)
+                {
+                    guessedString.Append(' ');
+                } 
+                ////guessedString.Append(ConvertColorToChar(currentPin.Color));
+                guessedString.Append(ConvertColorToChar(i_GuessedPins[i].Color));
+            }
+
+            return guessedString.ToString();
+        }
+
+        private static char ConvertColorToChar(eColors i_Color)
+        {
+            return (char)((int)'A' + (int)i_Color);
         }
     }
 }
