@@ -17,6 +17,7 @@ namespace BullsAndCows
             bool quitGame = false;
             ushort numberOfGuesses = UI.UIManager.GetNumberOfGuesses();
             GameBoardData gameBoard = new GameBoardData(numberOfGuesses);
+            // debug!!!!!
 
             //// while (!isSuccessfulGuess && guessNumber <= numberOfGuesses)
             while (!quitGame && !isSuccessfulGuess && gameBoard.TurnsPlayed <= numberOfGuesses)
