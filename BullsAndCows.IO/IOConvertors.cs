@@ -1,7 +1,7 @@
-﻿using BullsAndCows.GameBoard;
+﻿using System.Text;
 using GProperties = BullsAndCows.GameProperties.Properties;
+using BullsAndCows.GameBoard;
 using BullsAndCows.GameProperties.Colors;
-using System.Text;
 
 namespace BullsAndCows.IO
 {

@@ -1,12 +1,9 @@
 ﻿using System;
-
-//using BullsAndCows;
 using BullsAndCows.GameBoard;
 using GProperties = BullsAndCows.GameProperties.Properties;
 
 namespace BullsAndCows
 {
-    
 
     public class Runner
     {

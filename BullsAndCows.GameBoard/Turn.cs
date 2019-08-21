@@ -44,8 +44,6 @@ namespace BullsAndCows.GameBoard
                 }
             }
         }
-
-        //private string m_guess;
         private readonly Pin[] m_GuessedPins = new Pin[GProperties.PinsSequenceLength];
         private readonly Result m_Result;
 

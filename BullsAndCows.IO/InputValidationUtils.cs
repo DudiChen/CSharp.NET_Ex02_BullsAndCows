@@ -8,11 +8,11 @@ namespace BullsAndCows.IO
 
     public class InputValidationUtils
     {
-        enum ePinUIDisplay
+        private enum ePinUIDisplay
         {
-            A,B,C,D,E,F,G,H
+            A, B, C, D, E, F, G, H
         }
-        
+
         public static bool ValidateUserInput(string i_UserInputString)
         {
             bool isInputCounterValid = true;
@@ -27,28 +27,22 @@ namespace BullsAndCows.IO
                 if (!Enum.IsDefined(typeof(ePinUIDisplay), pin))
                 {
                     isInputCounterValid = false;
-                }                            
+                }
             }
 
             return isInputCounterValid;
         }
-        public static bool IsOutOfBound(ushort i_inputUshort)
+        public static bool IsOutOfBound(ushort i_InputUshort)
         {
-            return (i_inputUshort > GProperties.MaximumNumberOfTries ||
-                i_inputUshort < GProperties.MinimumNumberOfTries);
+            return i_InputUshort > GProperties.MaximumNumberOfTries || i_InputUshort < GProperties.MinimumNumberOfTries;
         }
         public static bool YesNoValidator(string i_UserInput)
         {
-
-            return (("Y".Equals(i_UserInput)) || ("N".Equals(i_UserInput)));
-           
+            return "Y".Equals(i_UserInput) || "N".Equals(i_UserInput);
         }
         public static bool QuitValidator(string i_UserInput)
         {
-
-            return ("Q".Equals(i_UserInput));
-
+            return "Q".Equals(i_UserInput);
         }
     }
-
 }

@@ -8,7 +8,6 @@ namespace BullsAndCows.GameBoard
     using GProperties = BullsAndCows.GameProperties.Properties;
     public class GameBoardData
     {
-
         private List<Turn> m_Turns;
         private Pin[] m_GoalSequence;
         private ushort m_TotalNumberOfTurns;
