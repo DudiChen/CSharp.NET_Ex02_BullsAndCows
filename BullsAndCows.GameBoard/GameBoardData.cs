@@ -28,8 +28,6 @@ namespace BullsAndCows.GameBoard
             //m_Turns = new Turn[i_NumberOfGuesses];
             m_Turns = new List<Turn>(i_NumberOfGuesses);
             this.GoalSequence = GeneratePinGoalSequence();
-            ////m_NumberOfPinColors = 
-            
         }
 
         public int TotalNumberOfTurns
