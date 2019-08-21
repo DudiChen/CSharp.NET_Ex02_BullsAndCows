@@ -2,16 +2,15 @@
 using System.Text;
 using BullsAndCows;
 using BullsAndCows.GameBoard;
-using eColors = BullsAndCows.GameProperties.Properties.eColors;
-using GProperties = BullsAndCows.GameProperties.Properties;
 using BullsAndCows.IO;
 using Ex02.ConsoleUtils;
+using GProperties = BullsAndCows.GameProperties.Properties;
+using eColors = BullsAndCows.GameProperties.Properties.eColors;
 
 namespace UI
 {
     public class UIManager
     {
-
         private const string k_EmptyResult = "       ";
         private const string k_EmptyGuess = "       ";
         private const string k_HiddenGuess = "# # # #";
@@ -19,7 +18,6 @@ namespace UI
         private const string k_TableHeader = "|Pins:    |Result:|";
         private const string k_MainHeader = "Current board statuse:";
         private const int k_ResultStringLength = 8;
-
 
         public static ushort GetNumberOfGuesses()
         {
@@ -38,8 +36,8 @@ Reenter a number:");
                 {
                     System.Console.WriteLine(@"Input out of bound please reenter a number:");
                 }
-                parseResult = ushort.TryParse(System.Console.ReadLine(), out inputUshortNumber);
 
+                parseResult = ushort.TryParse(System.Console.ReadLine(), out inputUshortNumber);
             }
 
             return inputUshortNumber;
@@ -57,6 +55,7 @@ Reenter a number:");
                 userInput = System.Console.ReadLine();
                 quitGame = InputValidationUtils.QuitValidator(userInput);
             }
+
             if (!quitGame)
             {
                 result = new UserReply(quitGame, IOConvertors.GuessStringToPinArrayConvertor(userInput));
@@ -67,7 +66,6 @@ Reenter a number:");
             }
 
             return result;
-
         }
 
         public static void DisplayBoard(GameBoardData i_GameData)
@@ -77,9 +75,9 @@ Reenter a number:");
             gameBoardString.AppendFormat("{1}{0}", Environment.NewLine, k_MainHeader);
             gameBoardString.AppendFormat("{1}{0}{2}{0}", Environment.NewLine, k_TableHeader, k_Separator);
             gameBoardString.AppendFormat("| {1} |{2}|{0}{3}{0}", Environment.NewLine, k_HiddenGuess, k_EmptyResult, k_Separator);
+
             for (int i = 0; i < i_GameData.TotalNumberOfTurns; i++)
             {
-
                 if (i >= i_GameData.TurnsPlayed)
                 {
                     gameBoardString.AppendFormat("| {1} |{2}|{0}{3}{0}", Environment.NewLine, k_EmptyGuess, k_EmptyResult, k_Separator);
@@ -92,10 +90,8 @@ Reenter a number:");
                         IOConvertors.PinArrayToStringConvertor(i_GameData.GetTurn(i).Guess),
                         IOConvertors.resultStringBuilder(i_GameData.GetTurn(i).Results),
                         k_Separator);
-
                 }
             }
-
 
             System.Console.WriteLine(gameBoardString);
         }
@@ -105,13 +101,13 @@ Reenter a number:");
             System.Console.WriteLine(
                 @"you have failed to guess the apponentes sequence <{0}> ",
                 IOConvertors.PinArrayToStringConvertor(i_Goalsequence));
-
         }
 
         public static void NotifySuccess(int i_NumberOfTurns)
         {
             System.Console.WriteLine("Congratulations! you have guessed after {0} steps!", i_NumberOfTurns);
         }
+
         public static bool PromptNewGameQuery()
         {
             System.Console.WriteLine("Would you like to start a new game? <Y/N>");
@@ -120,7 +116,6 @@ Reenter a number:");
             {
                 System.Console.WriteLine("Input is incorrect. please reenter decision:");
                 userInput = System.Console.ReadLine();
-
             }
 
             return "Y".Equals(userInput);

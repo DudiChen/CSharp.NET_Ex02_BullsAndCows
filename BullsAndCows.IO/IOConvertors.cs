@@ -1,6 +1,6 @@
 ﻿using System.Text;
-using GProperties = BullsAndCows.GameProperties.Properties;
 using BullsAndCows.GameBoard;
+using GProperties = BullsAndCows.GameProperties.Properties;
 using eColors = BullsAndCows.GameProperties.Properties.eColors;
 
 namespace BullsAndCows.IO

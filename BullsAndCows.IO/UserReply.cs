@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using BullsAndCows.GameBoard;
+
 namespace BullsAndCows.IO
 {
     public class UserReply
