@@ -4,16 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1EBC2ECD-9543-4A03-98F0-1F60BE17A9A1}</ProjectGuid>
+    <ProjectGuid>{1D56F595-916D-4986-AFEE-B9F121083B17}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BullsAndCows</RootNamespace>
-    <AssemblyName>BullsAndCows</AssemblyName>
+    <RootNamespace>BullsAndCows.GameBoard</RootNamespace>
+    <AssemblyName>BullsAndCows.GameBoard</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -31,27 +30,21 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
-  <ItemGroup>
-    <Compile Include="Runner.cs" />
-  </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BullsAndCows.GameBoard\BullsAndCows.GameBoard.csproj">
-      <Project>{1d56f595-916d-4986-afee-b9f121083b17}</Project>
-      <Name>BullsAndCows.GameBoard</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\InputHandler\UI.IOHandler.csproj">
-      <Project>{57a505ac-a9fc-4ceb-9a96-58fb8cc0854d}</Project>
-      <Name>UI.IOHandler</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\UI\UI.csproj">
-      <Project>{6cc13e2d-0f20-4610-8eb4-9d1c61797900}</Project>
-      <Name>UI</Name>
+    <Compile Include="GameBoardData.cs" />
+    <Compile Include="Pin.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Turn.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BullsAndCows.GameProperties\BullsAndCows.GameProperties.csproj">
+      <Project>{379cc7c0-df78-4898-a2c7-4efd8cb1b5ef}</Project>
+      <Name>BullsAndCows.GameProperties</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

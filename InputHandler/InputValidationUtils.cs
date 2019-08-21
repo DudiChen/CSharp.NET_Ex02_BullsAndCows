@@ -16,29 +16,26 @@ namespace UI.IOHandler
         public static bool ValidateUserInput(string i_UserInputString)
         {
             bool isInputCounterValid = true;
-
-            ////int[] choiceCounter = new int[GameBoardData.k_NumberOfPinTypes];
-            //// ADDED A WORKAROUND:
             int[] choiceCounter = new int[GameProperties.NumberOfPinColors];
 
             for (int i = 0; i < i_UserInputString.Length && isInputCounterValid; i++)
             {
-                char pin = i_UserInputString[i];
+                char pinColor = i_UserInputString[i];
 
                 if (i % 2 != 0)
                 {
-                    isInputCounterValid = (pin == ' ');
+                    isInputCounterValid = (pinColor == ' ');
                 }
                 else
                 {
-                    if (pin <= 'A' && pin >= 'H')
+                    if (pinColor >= 'A' && pinColor <= 'H')
                     {
-                        if (choiceCounter[pin - 'A'] == 1)
+                        if (choiceCounter[pinColor - 'A'] == 1)
                         {
                             isInputCounterValid = false;
                             break;
                         }
-                        choiceCounter[pin - 'A']++;
+                        choiceCounter[pinColor - 'A']++;
                     }
                     else
                     {

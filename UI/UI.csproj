@@ -36,7 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Ex02.ConsoleUtils">
-      <HintPath>..\..\..\..\..\..\..\temp\Ex02.ConsoleUtils.dll</HintPath>
+      <HintPath>C:\Temp\Ex02.ConsoleUtils.dll</HintPath>
     </Reference>
     <Reference Include="System" />
   </ItemGroup>
@@ -44,13 +44,17 @@
     <Compile Include="UIManager.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BullsAndCows.GameBoard\BullsAndCows.GameBoard.csproj">
+      <Project>{1d56f595-916d-4986-afee-b9f121083b17}</Project>
+      <Name>BullsAndCows.GameBoard</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BullsAndCows.GameProperties\BullsAndCows.GameProperties.csproj">
       <Project>{379cc7c0-df78-4898-a2c7-4efd8cb1b5ef}</Project>
       <Name>BullsAndCows.GameProperties</Name>
     </ProjectReference>
-    <ProjectReference Include="..\GameBoardData\BullsAndCows.GameBoard.csproj">
-      <Project>{a61386af-ec8c-4391-8e0a-19e3b6ca28b5}</Project>
-      <Name>BullsAndCows.GameBoard</Name>
+    <ProjectReference Include="..\InputHandler\UI.IOHandler.csproj">
+      <Project>{57a505ac-a9fc-4ceb-9a96-58fb8cc0854d}</Project>
+      <Name>UI.IOHandler</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -5,7 +5,7 @@ using BullsAndCows.GameBoard;
 ////using BullsAndCows.GameBoard.Colors;
 using BullsAndCows.GameProperties.Colors;
 using GameProperties = BullsAndCows.GameProperties.Properties;
-
+using UI.IOHandler;
 namespace UI
 {
     public class UIManager
@@ -35,9 +35,10 @@ Reenter a number:");
             return inputUshortNumber;
         }
 
-        public static string GetUserGuess()
+        public static Pin[] GetUserGuess()
         {
             System.Console.WriteLine("Please type your next guess <A B C D> or 'Q' to quit:");
+          
             return System.Console.ReadLine();
             
         }
