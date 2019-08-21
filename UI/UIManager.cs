@@ -6,6 +6,7 @@ using BullsAndCows.GameBoard;
 using BullsAndCows.GameProperties.Colors;
 using GameProperties = BullsAndCows.GameProperties.Properties;
 using UI.IOHandler;
+using Ex02.ConsoleUtils;
 namespace UI
 {
     public class UIManager
@@ -53,6 +54,7 @@ Reenter a number:");
 
         public static void DisplayBoard(GameBoardData i_Data)
         {
+            Screen.Clear();
             System.Console.WriteLine(
                 @"|Pins:    |Result:|
 |=========|=======|");
