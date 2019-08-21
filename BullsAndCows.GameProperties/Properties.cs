@@ -12,16 +12,18 @@ namespace BullsAndCows.GameProperties
     }
     public class Properties
     {
-        private const uint k_NumberOfPinColors = 8;
+        ////private const uint k_NumberOfPinColors = 8;
         private const uint k_MinimumNumberOfTries = 4;
         private const uint k_MaximumNumberOfTries = 10;
         private const uint k_PinsSequenceLength = 4;
+        private static readonly int m_NumberOfPinColors = Enum.GetNames(typeof(Colors.eColors)).Length;
 
-        public static uint NumberOfPinColors
+
+        public static int NumberOfPinColors
         {
             get
             {
-                return k_NumberOfPinColors;
+                return m_NumberOfPinColors;
             }
         }
 

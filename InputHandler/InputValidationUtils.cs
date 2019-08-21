@@ -16,29 +16,26 @@ namespace UI.IOHandler
         public static bool ValidateUserInput(string i_UserInputString)
         {
             bool isInputCounterValid = true;
-
-            ////int[] choiceCounter = new int[GameBoardData.k_NumberOfPinTypes];
-            //// ADDED A WORKAROUND:
             int[] choiceCounter = new int[GameProperties.NumberOfPinColors];
 
             for (int i = 0; i < i_UserInputString.Length && isInputCounterValid; i++)
             {
-                char pin = i_UserInputString[i];
+                char pinColor = i_UserInputString[i];
 
                 if (i % 2 != 0)
                 {
-                    isInputCounterValid = (pin == ' ');
+                    isInputCounterValid = (pinColor == ' ');
                 }
                 else
                 {
-                    if (pin <= 'A' && pin >= 'H')
+                    if (pinColor >= 'A' && pinColor <= 'H')
                     {
-                        if (choiceCounter[pin - 'A'] == 1)
+                        if (choiceCounter[pinColor - 'A'] == 1)
                         {
                             isInputCounterValid = false;
                             break;
                         }
-                        choiceCounter[pin - 'A']++;
+                        choiceCounter[pinColor - 'A']++;
                     }
                     else
                     {
@@ -51,15 +48,15 @@ namespace UI.IOHandler
             return isInputCounterValid;
         }
 
-        public static Turn CompareUserGuess(string i_UserInputString, string i_Guess)
+        public static Turn CompareUserGuess(Pin[] i_UserGuessedPins, Pin[] i_GoalSequence)
         {
-            Turn currentTurn = new Turn();
             Turn.Result resultOfGuess = new Turn.Result();
-            for (int j = 0; j < i_Guess.Length; j++)
+
+            for (int j = 0; j < i_GoalSequence.Length; j++)
             {
-                for (int i = 0; i < i_UserInputString.Length; i++)
+                for (int i = 0; i < i_UserGuessedPins.Length; i++)
                 {
-                    if (i_Guess[j] == i_UserInputString[i])
+                    if (i_GoalSequence[j].Color == i_UserGuessedPins[i].Color)
                     {
                         if (i == j)
                         {
@@ -73,16 +70,14 @@ namespace UI.IOHandler
                 }
             }
 
-            currentTurn.PinResult = resultOfGuess;
-            return currentTurn;
+
+            return new Turn(i_UserGuessedPins,resultOfGuess);
         }
 
         private static Pin[] GuessStringToPinArrayConvertor(string i_GuessString)
         {
             Pin[] guessedPins = new Pin[GameProperties.PinsSequenceLength];
-            ////////////////////////////////////////////////
-            ///// ?? - Does the string contain spaces? /////
-            ////////////////////////////////////////////////
+            
             string[] guessedStringArray = i_GuessString.Split(' ');
 
             for (int i = 0; i < guessedPins.Length; i++)
